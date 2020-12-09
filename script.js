@@ -1,6 +1,18 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+function generatePassword() {
+	var options = {
+		length: 8,
+		include: {
+			letters: "abcdefghijklmnopqrstuvwxyz",
+			characters: "!@#$%^&*()-_=+/\\'\"[]{}|?.,;:"
+		}
+	}
+
+	return "password";
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
