@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -16,6 +15,31 @@
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
+          <form id="passwordOptions">
+            <div class="form-group">
+              <label for="pwLength">Length:</label>
+              <input type="number" name="pwLength" class="form-control" id="pwLength" aria-describedBy="pwLengthHelp" min="8" max="128" value="8">
+              <small id="pwLengthHelp" class="form-text text-muted">Enter a number between 8 and 128.</small>
+            </div>
+            <div class="form-group">
+              <div class="form-check form-check-inline">
+                <input type="checkbox" class="form-check-input" id="uppercase" value="uppercase" checked>
+                <label for="uppercase" class="form-check-label">Uppercase</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="checkbox" class="form-check-input" id="lowercase" value="lowercase" checked>
+                <label for="lowercase" class="form-check-label">Lowercase</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="checkbox" class="form-check-input" id="specialCharacters" value="specialCharacters" checked>
+                <label for="specialCharacters" class="form-check-label">Special Characters</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="checkbox" class="form-check-input" id="numbers" value="numbers" checked>
+                <label for="numbers" class="form-check-label">Numbers</label>
+              </div>
+            </div>
+          </form>
         </div>
         <div class="card-body">
           <textarea
@@ -30,58 +54,7 @@
         </div>
       </div>
     </div>
-    <!-- Modal with form for password criteria/options -->
-    <div class="modal" id="passwordOptionsModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Password Options</h5>
-            <button type="button" class="close" id="closeBtn" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="passwordOptionsForm">
-              <!-- 
-              OPTIONS:
-                * ? criteria to include
-                * length (8 - 128)
-                * character types: lowercase, uppercase, numeric, spec. chars
-              -->
-              <div class="form-group">
-                <label for="pwLength">Length</label>
-                <input type="number" min="8" max="128" class="form-control" id="pwLength" aria-describedBy="lengthHelp" value="8">
-                <small id="lengthHelp" class="form-text text-muted">Enter a number. Min: 8, Max: 128</small>
-              </div>
-              <h3>Characters to include:</h3>
-              <div class="form-check form-check-inline">
-                <input type="checkbox" class="form-check-input" name="include[]" id="lowercase" value="lowercase">
-                <label class="form-check-label" for="lowercase">Lowercase</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input type="checkbox" class="form-check-input" name="include[]" id="uppercase" value="uppercase">
-                <label class="form-check-label" for="uppercase">Uppercase</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input type="checkbox" class="form-check-input" name="include[]" id="numbers" value="numbers">
-                <label class="form-check-label" for="numbers">Numbers</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input type="checkbox" class="form-check-input" name="include[]" id="specialCharacters" value="special characters">
-                <label class="form-check-label" for="specialCharacters">Special Characters</label>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="saveBtn">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
 </html>

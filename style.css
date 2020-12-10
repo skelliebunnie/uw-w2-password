@@ -78,6 +78,14 @@ header {
   clear: both;
 }
 
+.form-group {
+  padding: 0 1rem 1rem;
+}
+
+.form-check.form-check-inline {
+  display: inline-block;
+}
+
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
