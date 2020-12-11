@@ -11,3 +11,6 @@ The initial password generation script was easy enough to put together, but afte
 After some research, I found a great answer on Stack Overflow (https://stackoverflow.com/a/61550284) for testing strings with regex. With a while loop checking the var `completed` and some if statements, the password gets regenerated until the requirements are met *before* it's actually printed to the screen.
 
 I also included a check to make sure the password length doesn't actually change if the user enters an invalid number (less than 8 or greater than 128).
+
+### View on GitPages
+https://skelliebunnie.github.io/uw-w2-password/
